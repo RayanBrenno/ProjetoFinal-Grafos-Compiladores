@@ -5,7 +5,7 @@ GRAPH:
     vertex Cadelinha69_
     edge Burro_ -> Cadelinha69_
     edge Ave -> Burro_
-    edge7 Cadelinha69_ -> Ave
+    edge Cadelinha69_ -> Ave
     vertex droptable
     vertex 15droptable
     edge Burro_ -> Ave
