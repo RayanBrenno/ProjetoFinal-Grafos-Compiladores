@@ -34,8 +34,8 @@ parser code {:
 :};
 
 
-terminal GRAPH, colon, line, arrow, directed, undirected, print, adjacency, vertex, edge; 
-terminal String ID;
+terminal GRAPH, colon, line, arrow, directed, undirected, print, vertex, edge; 
+terminal String ID,adjacency;
 non terminal S, T, V1, V2, F;
 start with S;
 
@@ -67,7 +67,7 @@ V1 ::= V1 vertex ID:id
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
             System.out.println("directed - edge - if - naoExisteUmvertice");
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
-            defineError("Aresta duplicada: " + origem + " -> " + destino);
+            defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
             System.out.println("directed - edge - else if - arestaDuplicada "+origem + " -> " + destino);
         } else {
             Digrafo.adicionarAresta(origem, destino, digrafo);
@@ -79,7 +79,7 @@ V1 ::= V1 vertex ID:id
 V2 ::= V2 vertex ID:id 
     {: 
         if (Grafo.existeVertice(id, grafo)) {
-            defineError("Vértice duplicado: " + id);
+            defineError(idleft, idright, "Vértice duplicado: " + id);
             System.out.println("undirected - vertex - if - naoAdicionarVertice " + id);
         } else {
             Grafo.adicionarVertice(id, grafo);
@@ -88,11 +88,11 @@ V2 ::= V2 vertex ID:id
     :}
     | V2 edge ID:origem line ID:destino
     {: 
-       if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
-            defineError("Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
+        if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
+            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
             System.out.println("undirected - edge - if - naoExisteUmvertice");
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
-            defineError("Aresta duplicada: " + origem + " -- " + destino);
+            defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
             System.out.println("undirected - edge - else if - arestaDuplicada "+origem + " -- " + destino);
         } else {
             Grafo.adicionarAresta(origem, destino, grafo);
@@ -105,8 +105,8 @@ F ::= print adjacency
     {: 
         deveImprimir = true;
     :}
-    | error 
+    | error:n
     {: 
-        parser.defineError("Sintaxe inválida!"); 
+        parser.defineError(nleft, nright, "Sintaxe inválida!"); 
     :}
     |;

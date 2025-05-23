@@ -7,14 +7,14 @@
 public class Sym {
   /* terminals */
   public static final int print = 8;
-  public static final int edge = 11;
+  public static final int edge = 10;
   public static final int directed = 6;
-  public static final int adjacency = 9;
+  public static final int adjacency = 12;
   public static final int EOF = 0;
-  public static final int vertex = 10;
+  public static final int vertex = 9;
   public static final int colon = 3;
   public static final int GRAPH = 2;
-  public static final int ID = 12;
+  public static final int ID = 11;
   public static final int error = 1;
   public static final int undirected = 7;
   public static final int arrow = 5;
@@ -29,10 +29,10 @@ public class Sym {
   "directed",
   "undirected",
   "print",
-  "adjacency",
   "vertex",
   "edge",
-  "ID"
+  "ID",
+  "adjacency"
   };
 }
 

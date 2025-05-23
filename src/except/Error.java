@@ -11,13 +11,13 @@ public class Error {
         this.text = text;
     }
 
-    public void print() {
+    public String print() {
         String aux = "Erro na linha " + (line+1) + " e coluna " + (column+1) + ": ";
         if (this.text == null)
             aux += "Erro desconhecido";
         else
             aux += this.text;
-        System.out.println(aux);
+        return aux;
     }
 
     public String getText() {

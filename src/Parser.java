@@ -48,22 +48,22 @@ public class Parser extends java_cup.runtime.lr_parser {
     unpackFromStrings(new String[] {
     "\000\033\000\004\004\005\001\002\000\004\002\035\001" +
     "\002\000\004\005\006\001\002\000\010\002\ufffd\010\011" +
-    "\011\007\001\002\000\014\002\ufff7\003\ufff7\012\ufff7\014" +
-    "\ufff7\015\ufff7\001\002\000\004\002\000\001\002\000\014" +
-    "\002\ufffa\003\ufffa\012\ufffa\014\ufffa\015\ufffa\001\002\000" +
-    "\014\002\ufff4\003\014\012\013\014\017\015\015\001\002" +
-    "\000\004\013\024\001\002\000\004\002\ufff5\001\002\000" +
-    "\004\016\021\001\002\000\004\002\uffff\001\002\000\004" +
-    "\016\020\001\002\000\014\002\ufffc\003\ufffc\012\ufffc\014" +
-    "\ufffc\015\ufffc\001\002\000\004\007\022\001\002\000\004" +
-    "\016\023\001\002\000\014\002\ufffb\003\ufffb\012\ufffb\014" +
-    "\ufffb\015\ufffb\001\002\000\004\002\ufff6\001\002\000\014" +
-    "\002\ufff4\003\014\012\013\014\030\015\027\001\002\000" +
-    "\004\002\ufffe\001\002\000\004\016\032\001\002\000\004" +
-    "\016\031\001\002\000\014\002\ufff9\003\ufff9\012\ufff9\014" +
-    "\ufff9\015\ufff9\001\002\000\004\006\033\001\002\000\004" +
-    "\016\034\001\002\000\014\002\ufff8\003\ufff8\012\ufff8\014" +
-    "\ufff8\015\ufff8\001\002\000\004\002\001\001\002" });
+    "\011\007\001\002\000\014\002\ufff7\003\ufff7\012\ufff7\013" +
+    "\ufff7\014\ufff7\001\002\000\004\002\000\001\002\000\014" +
+    "\002\ufffa\003\ufffa\012\ufffa\013\ufffa\014\ufffa\001\002\000" +
+    "\014\002\ufff4\003\014\012\013\013\017\014\015\001\002" +
+    "\000\004\016\024\001\002\000\004\002\ufff5\001\002\000" +
+    "\004\015\021\001\002\000\004\002\uffff\001\002\000\004" +
+    "\015\020\001\002\000\014\002\ufffc\003\ufffc\012\ufffc\013" +
+    "\ufffc\014\ufffc\001\002\000\004\007\022\001\002\000\004" +
+    "\015\023\001\002\000\014\002\ufffb\003\ufffb\012\ufffb\013" +
+    "\ufffb\014\ufffb\001\002\000\004\002\ufff6\001\002\000\014" +
+    "\002\ufff4\003\014\012\013\013\030\014\027\001\002\000" +
+    "\004\002\ufffe\001\002\000\004\015\032\001\002\000\004" +
+    "\015\031\001\002\000\014\002\ufff9\003\ufff9\012\ufff9\013" +
+    "\ufff9\014\ufff9\001\002\000\004\006\033\001\002\000\004" +
+    "\015\034\001\002\000\014\002\ufff8\003\ufff8\012\ufff8\013" +
+    "\ufff8\014\ufff8\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -259,7 +259,7 @@ class CUP$Parser$actions {
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
             System.out.println("directed - edge - if - naoExisteUmvertice");
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
-            defineError("Aresta duplicada: " + origem + " -> " + destino);
+            defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
             System.out.println("directed - edge - else if - arestaDuplicada "+origem + " -> " + destino);
         } else {
             Digrafo.adicionarAresta(origem, destino, digrafo);
@@ -288,7 +288,7 @@ class CUP$Parser$actions {
 		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         if (Grafo.existeVertice(id, grafo)) {
-            defineError("Vértice duplicado: " + id);
+            defineError(idleft, idright, "Vértice duplicado: " + id);
             System.out.println("undirected - vertex - if - naoAdicionarVertice " + id);
         } else {
             Grafo.adicionarVertice(id, grafo);
@@ -310,11 +310,11 @@ class CUP$Parser$actions {
 		int destinoright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
-       if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
-            defineError("Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
+        if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
+            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
             System.out.println("undirected - edge - if - naoExisteUmvertice");
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
-            defineError("Aresta duplicada: " + origem + " -- " + destino);
+            defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
             System.out.println("undirected - edge - else if - arestaDuplicada "+origem + " -- " + destino);
         } else {
             Grafo.adicionarAresta(origem, destino, grafo);
@@ -349,8 +349,11 @@ class CUP$Parser$actions {
           case 12: // F ::= error 
             {
               Object RESULT =null;
+		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
+		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
+		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
-        parser.defineError("Sintaxe inválida!"); 
+        parser.defineError(nleft, nright, "Sintaxe inválida!"); 
     
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }

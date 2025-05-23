@@ -1,4 +1,7 @@
 package except;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List; 
 
 public class ListError {
@@ -25,11 +28,16 @@ public class ListError {
         } 
     } 
  
-    public void logErrors() { 
-        for(Error e : this.errors) {
-            e.print(); 
-        } 
-    } 
+    public void logErrors() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/erros.log"))) {
+            for (Error e : this.errors) {
+                writer.write(e.print()); // usa a formatação personalizada do erro
+                writer.newLine();
+            }
+        } catch (IOException ex) {
+            System.err.println("Erro ao escrever no arquivo de log: " + ex.getMessage());
+        }
+    }
  
     public boolean hasErrors() { 
         return this.errors.size() > 0; 
