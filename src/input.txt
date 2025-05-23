@@ -1,0 +1,14 @@
+GRAPH:
+    directed
+    vertex A
+    edge B -> C
+    vertex B
+    vertex C
+    edge B -> C
+    edge A -> B
+    vertex C
+    edge C -> A
+    edge C -> A
+    vertex D
+    edge B -> A
+    print adjacency
