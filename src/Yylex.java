@@ -777,7 +777,6 @@ class Yylex implements java_cup.runtime.Scanner {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
             { defineError(yyline , yycolumn , "Comando desconhecido: " + yytext());
-                    return createSymbol(Sym.error);
             }
           // fall through
           case 15: break;
@@ -787,7 +786,7 @@ class Yylex implements java_cup.runtime.Scanner {
           // fall through
           case 16: break;
           case 3:
-            { defineError(yyline , yycolumn , "Sintaxe invalida para ID: " + yytext());
+            { return createSymbol(Sym.IDerrado, yytext());
             }
           // fall through
           case 17: break;

@@ -9,8 +9,9 @@ public class Sym {
   public static final int print = 8;
   public static final int edge = 10;
   public static final int directed = 6;
-  public static final int adjacency = 12;
+  public static final int adjacency = 13;
   public static final int EOF = 0;
+  public static final int IDerrado = 12;
   public static final int vertex = 9;
   public static final int colon = 3;
   public static final int GRAPH = 2;
@@ -32,6 +33,7 @@ public class Sym {
   "vertex",
   "edge",
   "ID",
+  "IDerrado",
   "adjacency"
   };
 }

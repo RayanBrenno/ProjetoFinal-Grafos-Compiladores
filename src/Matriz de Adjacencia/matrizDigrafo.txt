@@ -1,7 +1,7 @@
 Matriz de Adjacência (Digrafo)
 
-                         Ave        Burro_  Cadelinha69_     droptable
-           Ave             0             1             0             0
-        Burro_             1             0             1             0
-  Cadelinha69_             1             0             0             0
-     droptable             0             0             0             0
+                   Ave     Burro_     cao10_  droptable
+        Ave          0          1          0          0
+     Burro_          0          0          1          0
+     cao10_          1          0          0          0
+  droptable          0          0          0          0

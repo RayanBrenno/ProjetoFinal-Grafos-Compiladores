@@ -63,11 +63,6 @@ idErrado = {digito}({letra}|{digito})*
 "--"            { return createSymbol(Sym.line); }
 {id}            { return createSymbol(Sym.ID, yytext()); }
 {espaco}        { /* Ignora espaços, quebras de linha e tabulações */ }
-{idErrado}      { 
-                    defineError(yyline , yycolumn , "Sintaxe invalida para ID: " + yytext());
-                }
-.               {
-                    defineError(yyline , yycolumn , "Comando desconhecido: " + yytext());
-                    return createSymbol(Sym.error);
-                }
+{idErrado}      { return createSymbol(Sym.IDerrado, yytext()); }
+.               { defineError(yyline , yycolumn , "Comando desconhecido: " + yytext()); }
 <<EOF>>         { return createSymbol(Sym.EOF); }
