@@ -1,10 +1,13 @@
 GRAPH:
-    undirected
+    directed
     vertex Ave
     vertex Burro_
-    vertex droptable
+    edge Burro_ -> cao10_
+    vertex Burro_
+    vertex 15droptable
     vertex cao10_
-    edge Burro_ -- cao10_
-    edg Ave -- Burro_
-    edge cao10_ -- Ave
+    edge Burro_ -> cao10_
+    edge Ave -> Burro_
+    edge cao10_ -> Ave
+    edge cao10_ -> Ave
     print adjacency

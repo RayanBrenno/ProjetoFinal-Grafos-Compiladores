@@ -12,8 +12,7 @@ parser code {:
     String type;
     public boolean deveImprimir = false;
 
-    public void syntax_error(Symbol s){     
-        this.defineError(s.left, s.right);    
+    public void syntax_error(Symbol s){        
     } 
  
     public void defineError(int line, int column, String text) { 
@@ -36,117 +35,92 @@ parser code {:
 
 terminal GRAPH, colon, line, arrow, directed, undirected, print, vertex, edge; 
 terminal String ID, IDerrado, adjacency;
-non terminal S, T, V1, V2, F;
+non terminal S, T, V1List, V1Element, V2List, V2Element, F;
 start with S;
 
-S ::= GRAPH colon T;
+S ::= GRAPH colon T
+    | error:n {: defineError(nleft, nright, "Sintaxe inválida!"); :};
 
-T ::= directed V1 F
-    {: 
-        type = "digrafo";
-    :}
-    | undirected V2 F
-    {: 
-        type = "grafo";
-    :}
-    |;
+T ::= directed V1List F {: type = "digrafo"; :}
+    | undirected V2List F {: type = "grafo"; :}
+    | error:n {: defineError(nleft+1, nright, "Sintaxe inválida!"); :};
 
-V1 ::= V1 vertex ID:id 
+V1List ::= V1List V1Element
+    | V1Element;
+
+V1Element ::= vertex ID:id 
     {: 
         if (Digrafo.existeVertice(id, digrafo)) {
             defineError(idleft, idright, "Vertice duplicado: " + id);
-            System.out.println("directed - vertex - if - naoAdicionarVertice " + id);
         } else {
             Digrafo.adicionarVertice(id, digrafo);
-            System.out.println("directed - vertex - else - adicionarVertice " + id );
         }
     :}
-    | V1 vertex IDerrado:id 
-    {: 
-        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
-    :}
-    | V1 edge ID:origem arrow ID:destino
+    | edge ID:origem arrow ID:destino
     {: 
         if (!Digrafo.existeVertice(origem, digrafo) || !Digrafo.existeVertice(destino, digrafo)) {
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
-            System.out.println("directed - edge - if - naoExisteUmvertice");
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
-            System.out.println("directed - edge - else if - arestaDuplicada "+origem + " -> " + destino);
         } else {
             Digrafo.adicionarAresta(origem, destino, digrafo);
-            System.out.println("directed - edge - else - adicionarAresta "+origem + " -> " + destino);
         }
     :}
-    | V1 edge IDerrado:origem arrow ID:destino
-    {: 
-        defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
-        System.out.println("directed - edge - origem inválida");
-    :}
-    | V1 edge ID:origem arrow IDerrado:destino
-    {: 
-        defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
-        System.out.println("directed - edge - destino inválido");
-    :}
-    | V1 edge IDerrado:origem arrow IDerrado:destino
-    {: 
-        defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -> " + destino);
-        System.out.println("directed - edge - origem e destino inválidos");
-    :}
-    | ;
-
-
-V2 ::= V2 vertex ID:id // Criação do vértice válido
-    {: 
-        if (Grafo.existeVertice(id, grafo)) {
-            defineError(idleft, idright, "Vertice duplicado: " + id);
-            System.out.println("undirected - vertex - if - naoAdicionarVertice " + id);
-        } else {
-            Grafo.adicionarVertice(id, grafo);
-            System.out.println("undirected - vertex - else - adicionarVertice " + id );
-        }
-    :}
-    | V2 vertex IDerrado:id // Criação do vértice inválido
+    | vertex IDerrado:id 
     {: 
         defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
     :}
-    | V2 edge ID:origem line ID:destino // Criação da aresta válida
+    | edge IDerrado:origem arrow ID:destino
+    {: 
+        defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
+    :}
+    | edge ID:origem arrow IDerrado:destino
+    {: 
+        defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
+    :}
+    | edge IDerrado:origem arrow IDerrado:destino
+    {: 
+        defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -> " + destino);
+    :};
+
+V2List ::= V2List V2Element  
+    | V2Element;
+
+V2Element ::= vertex ID:id // Criação do vértice válido
+    {: 
+        if (Grafo.existeVertice(id, grafo)) {
+            defineError(idleft, idright, "Vertice duplicado: " + id);
+        } else {
+            Grafo.adicionarVertice(id, grafo);
+        }
+    :}
+    | edge ID:origem line ID:destino // Criação da aresta válida
     {: 
         if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
-            System.out.println("undirected - edge - if - naoExisteUmvertice");
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
-            System.out.println("undirected - edge - else if - arestaDuplicada "+origem + " -- " + destino);
         } else {
             Grafo.adicionarAresta(origem, destino, grafo);
-            System.out.println("undirected - edge - else - adicionarAresta "+origem + " -- " + destino);
         }
     :}
-    | V2 edge IDerrado:origem line ID:destino // Erro: origem invalida
+    | vertex IDerrado:id // Criação do vértice inválido
+    {: 
+        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
+    :}
+    | edge IDerrado:origem line ID:destino // Erro: origem invalida
     {: 
         defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
-        System.out.println("undirected - edge - origem inválida");
     :}
-    | V2 edge ID:origem line IDerrado:destino // Erro: destino invalido
+    | edge ID:origem line IDerrado:destino // Erro: destino invalido
     {: 
         defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
-        System.out.println("undirected - edge - destino inválido");
     :}
-    | V2 edge IDerrado:origem line IDerrado:destino // Erro: ambos invalidos
+    | edge IDerrado:origem line IDerrado:destino // Erro: ambos invalidos
     {: 
         defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -- " + destino);
-        System.out.println("undirected - edge - origem e destino inválidos");
-    :}
-    | ;
+    :};
 
-F ::= print adjacency
-    {: 
-        deveImprimir = true;
-    :}
-    | error:n
-    {: 
-        defineError(nleft, nright, "Sintaxe inválida!");
-        System.out.println("erro aqui no final");
-    :}
-    |;
+F ::= print adjacency{: deveImprimir = true; :}
+    | error:n {: defineError(nleft+1, nright, "Sintaxe inválida!"); :}
+    | ;

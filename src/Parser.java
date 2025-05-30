@@ -34,13 +34,14 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\026\000\002\002\004\000\002\002\005\000\002\003" +
-    "\005\000\002\003\005\000\002\003\002\000\002\004\005" +
-    "\000\002\004\005\000\002\004\007\000\002\004\007\000" +
-    "\002\004\007\000\002\004\007\000\002\004\002\000\002" +
-    "\005\005\000\002\005\005\000\002\005\007\000\002\005" +
-    "\007\000\002\005\007\000\002\005\007\000\002\005\002" +
-    "\000\002\006\004\000\002\006\003\000\002\006\002" });
+    "\000\031\000\002\002\004\000\002\002\005\000\002\002" +
+    "\003\000\002\003\005\000\002\003\005\000\002\003\003" +
+    "\000\002\004\004\000\002\004\003\000\002\005\004\000" +
+    "\002\005\006\000\002\005\004\000\002\005\006\000\002" +
+    "\005\006\000\002\005\006\000\002\006\004\000\002\006" +
+    "\003\000\002\007\004\000\002\007\006\000\002\007\004" +
+    "\000\002\007\006\000\002\007\006\000\002\007\006\000" +
+    "\002\010\004\000\002\010\003\000\002\010\002" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -48,36 +49,41 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\047\000\004\004\005\001\002\000\004\002\051\001" +
-    "\002\000\004\005\006\001\002\000\010\002\ufffd\010\011" +
-    "\011\007\001\002\000\014\002\uffef\003\uffef\012\uffef\013" +
-    "\uffef\014\uffef\001\002\000\004\002\000\001\002\000\014" +
-    "\002\ufff6\003\ufff6\012\ufff6\013\ufff6\014\ufff6\001\002\000" +
-    "\014\002\uffec\003\014\012\013\013\017\014\016\001\002" +
-    "\000\004\017\032\001\002\000\004\002\uffed\001\002\000" +
-    "\004\002\uffff\001\002\000\006\015\022\016\023\001\002" +
-    "\000\006\015\020\016\021\001\002\000\014\002\ufffc\003" +
-    "\ufffc\012\ufffc\013\ufffc\014\ufffc\001\002\000\014\002\ufffb" +
-    "\003\ufffb\012\ufffb\013\ufffb\014\ufffb\001\002\000\004\007" +
-    "\027\001\002\000\004\007\024\001\002\000\006\015\025" +
-    "\016\026\001\002\000\014\002\ufff9\003\ufff9\012\ufff9\013" +
-    "\ufff9\014\ufff9\001\002\000\014\002\ufff7\003\ufff7\012\ufff7" +
-    "\013\ufff7\014\ufff7\001\002\000\006\015\030\016\031\001" +
+    "\000\055\000\006\003\004\004\006\001\002\000\004\002" +
+    "\uffff\001\002\000\004\002\057\001\002\000\004\005\007" +
+    "\001\002\000\010\003\012\010\013\011\010\001\002\000" +
+    "\006\013\042\014\041\001\002\000\004\002\000\001\002" +
+    "\000\004\002\ufffc\001\002\000\006\013\017\014\016\001" +
     "\002\000\014\002\ufffa\003\ufffa\012\ufffa\013\ufffa\014\ufffa" +
-    "\001\002\000\014\002\ufff8\003\ufff8\012\ufff8\013\ufff8\014" +
-    "\ufff8\001\002\000\004\002\uffee\001\002\000\014\002\uffec" +
-    "\003\014\012\013\013\036\014\035\001\002\000\004\002" +
-    "\ufffe\001\002\000\006\015\041\016\042\001\002\000\006" +
-    "\015\037\016\040\001\002\000\014\002\ufff5\003\ufff5\012" +
-    "\ufff5\013\ufff5\014\ufff5\001\002\000\014\002\ufff4\003\ufff4" +
-    "\012\ufff4\013\ufff4\014\ufff4\001\002\000\004\006\046\001" +
-    "\002\000\004\006\043\001\002\000\006\015\044\016\045" +
-    "\001\002\000\014\002\ufff2\003\ufff2\012\ufff2\013\ufff2\014" +
-    "\ufff2\001\002\000\014\002\ufff0\003\ufff0\012\ufff0\013\ufff0" +
-    "\014\ufff0\001\002\000\006\015\047\016\050\001\002\000" +
-    "\014\002\ufff3\003\ufff3\012\ufff3\013\ufff3\014\ufff3\001\002" +
-    "\000\014\002\ufff1\003\ufff1\012\ufff1\013\ufff1\014\ufff1\001" +
-    "\002\000\004\002\001\001\002" });
+    "\001\002\000\014\002\uffe9\003\034\012\033\013\017\014" +
+    "\016\001\002\000\006\015\022\016\023\001\002\000\006" +
+    "\015\020\016\021\001\002\000\014\002\ufff9\003\ufff9\012" +
+    "\ufff9\013\ufff9\014\ufff9\001\002\000\014\002\ufff7\003\ufff7" +
+    "\012\ufff7\013\ufff7\014\ufff7\001\002\000\004\007\027\001" +
+    "\002\000\004\007\024\001\002\000\006\015\025\016\026" +
+    "\001\002\000\014\002\ufff6\003\ufff6\012\ufff6\013\ufff6\014" +
+    "\ufff6\001\002\000\014\002\ufff4\003\ufff4\012\ufff4\013\ufff4" +
+    "\014\ufff4\001\002\000\006\015\030\016\031\001\002\000" +
+    "\014\002\ufff8\003\ufff8\012\ufff8\013\ufff8\014\ufff8\001\002" +
+    "\000\014\002\ufff5\003\ufff5\012\ufff5\013\ufff5\014\ufff5\001" +
+    "\002\000\014\002\ufffb\003\ufffb\012\ufffb\013\ufffb\014\ufffb" +
+    "\001\002\000\004\017\036\001\002\000\004\002\uffea\001" +
+    "\002\000\004\002\ufffe\001\002\000\004\002\uffeb\001\002" +
+    "\000\014\002\uffe9\003\034\012\033\013\042\014\041\001" +
+    "\002\000\014\002\ufff2\003\ufff2\012\ufff2\013\ufff2\014\ufff2" +
+    "\001\002\000\006\015\045\016\046\001\002\000\006\015" +
+    "\043\016\044\001\002\000\014\002\ufff1\003\ufff1\012\ufff1" +
+    "\013\ufff1\014\ufff1\001\002\000\014\002\uffef\003\uffef\012" +
+    "\uffef\013\uffef\014\uffef\001\002\000\004\006\052\001\002" +
+    "\000\004\006\047\001\002\000\006\015\050\016\051\001" +
+    "\002\000\014\002\uffee\003\uffee\012\uffee\013\uffee\014\uffee" +
+    "\001\002\000\014\002\uffec\003\uffec\012\uffec\013\uffec\014" +
+    "\uffec\001\002\000\006\015\053\016\054\001\002\000\014" +
+    "\002\ufff0\003\ufff0\012\ufff0\013\ufff0\014\ufff0\001\002\000" +
+    "\014\002\uffed\003\uffed\012\uffed\013\uffed\014\uffed\001\002" +
+    "\000\014\002\ufff3\003\ufff3\012\ufff3\013\ufff3\014\ufff3\001" +
+    "\002\000\004\002\ufffd\001\002\000\004\002\001\001\002" +
+    "" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -85,20 +91,22 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\047\000\004\002\003\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\003\007\001\001\000\004\005\032" +
-    "\001\001\000\002\001\001\000\004\004\011\001\001\000" +
-    "\004\006\014\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\004\006\033\001\001\000\002\001" +
+    "\000\055\000\004\002\004\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\003\010\001\001" +
+    "\000\006\006\036\007\037\001\001\000\002\001\001\000" +
+    "\002\001\001\000\006\004\014\005\013\001\001\000\002" +
+    "\001\001\000\006\005\031\010\034\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001" });
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\006\007\054\010\055\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -143,8 +151,7 @@ public class Parser extends java_cup.runtime.lr_parser {
     String type;
     public boolean deveImprimir = false;
 
-    public void syntax_error(Symbol s){     
-        this.defineError(s.left, s.right);    
+    public void syntax_error(Symbol s){        
     } 
  
     public void defineError(int line, int column, String text) { 
@@ -212,38 +219,67 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // T ::= directed V1 F 
+          case 2: // S ::= error 
             {
               Object RESULT =null;
-		 
-        type = "digrafo";
-    
+		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
+		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
+		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		 defineError(nleft, nright, "Sintaxe inválida!"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 3: // T ::= directed V1List F 
+            {
+              Object RESULT =null;
+		 type = "digrafo"; 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("T",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // T ::= undirected V2 F 
+          case 4: // T ::= undirected V2List F 
             {
               Object RESULT =null;
-		 
-        type = "grafo";
-    
+		 type = "grafo"; 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("T",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // T ::= 
+          case 5: // T ::= error 
             {
               Object RESULT =null;
-
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("T",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
+		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
+		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		 defineError(nleft+1, nright, "Sintaxe inválida!"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("T",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // V1 ::= V1 vertex ID 
+          case 6: // V1List ::= V1List V1Element 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1List",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 7: // V1List ::= V1Element 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1List",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 8: // V1Element ::= vertex ID 
             {
               Object RESULT =null;
 		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
@@ -252,32 +288,16 @@ class CUP$Parser$actions {
 		 
         if (Digrafo.existeVertice(id, digrafo)) {
             defineError(idleft, idright, "Vertice duplicado: " + id);
-            System.out.println("directed - vertex - if - naoAdicionarVertice " + id);
         } else {
             Digrafo.adicionarVertice(id, digrafo);
-            System.out.println("directed - vertex - else - adicionarVertice " + id );
         }
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 6: // V1 ::= V1 vertex IDerrado 
-            {
-              Object RESULT =null;
-		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
-		int idright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
-		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 
-        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
-    
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 7: // V1 ::= V1 edge ID arrow ID 
+          case 9: // V1Element ::= edge ID arrow ID 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -289,21 +309,32 @@ class CUP$Parser$actions {
 		 
         if (!Digrafo.existeVertice(origem, digrafo) || !Digrafo.existeVertice(destino, digrafo)) {
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
-            System.out.println("directed - edge - if - naoExisteUmvertice");
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
-            System.out.println("directed - edge - else if - arestaDuplicada "+origem + " -> " + destino);
         } else {
             Digrafo.adicionarAresta(origem, destino, digrafo);
-            System.out.println("directed - edge - else - adicionarAresta "+origem + " -> " + destino);
         }
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // V1 ::= V1 edge IDerrado arrow ID 
+          case 10: // V1Element ::= vertex IDerrado 
+            {
+              Object RESULT =null;
+		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
+		int idright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
+		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		 
+        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
+    
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 11: // V1Element ::= edge IDerrado arrow ID 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -314,14 +345,13 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
-        System.out.println("directed - edge - origem inválida");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // V1 ::= V1 edge ID arrow IDerrado 
+          case 12: // V1Element ::= edge ID arrow IDerrado 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -332,14 +362,13 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
-        System.out.println("directed - edge - destino inválido");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // V1 ::= V1 edge IDerrado arrow IDerrado 
+          case 13: // V1Element ::= edge IDerrado arrow IDerrado 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -350,23 +379,31 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -> " + destino);
-        System.out.println("directed - edge - origem e destino inválidos");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1Element",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // V1 ::= 
+          case 14: // V2List ::= V2List V2Element 
             {
               Object RESULT =null;
 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V1",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2List",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // V2 ::= V2 vertex ID 
+          case 15: // V2List ::= V2Element 
+            {
+              Object RESULT =null;
+
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2List",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 16: // V2Element ::= vertex ID 
             {
               Object RESULT =null;
 		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
@@ -375,32 +412,16 @@ class CUP$Parser$actions {
 		 
         if (Grafo.existeVertice(id, grafo)) {
             defineError(idleft, idright, "Vertice duplicado: " + id);
-            System.out.println("undirected - vertex - if - naoAdicionarVertice " + id);
         } else {
             Grafo.adicionarVertice(id, grafo);
-            System.out.println("undirected - vertex - else - adicionarVertice " + id );
         }
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // V2 ::= V2 vertex IDerrado 
-            {
-              Object RESULT =null;
-		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
-		int idright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
-		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 
-        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
-    
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // V2 ::= V2 edge ID line ID 
+          case 17: // V2Element ::= edge ID line ID 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -412,21 +433,32 @@ class CUP$Parser$actions {
 		 
         if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
             defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
-            System.out.println("undirected - edge - if - naoExisteUmvertice");
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
-            System.out.println("undirected - edge - else if - arestaDuplicada "+origem + " -- " + destino);
         } else {
             Grafo.adicionarAresta(origem, destino, grafo);
-            System.out.println("undirected - edge - else - adicionarAresta "+origem + " -- " + destino);
         }
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // V2 ::= V2 edge IDerrado line ID 
+          case 18: // V2Element ::= vertex IDerrado 
+            {
+              Object RESULT =null;
+		int idleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
+		int idright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
+		String id = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		 
+        defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
+    
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 19: // V2Element ::= edge IDerrado line ID 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -437,14 +469,13 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
-        System.out.println("undirected - edge - origem inválida");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // V2 ::= V2 edge ID line IDerrado 
+          case 20: // V2Element ::= edge ID line IDerrado 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -455,14 +486,13 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
-        System.out.println("undirected - edge - destino inválido");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // V2 ::= V2 edge IDerrado line IDerrado 
+          case 21: // V2Element ::= edge IDerrado line IDerrado 
             {
               Object RESULT =null;
 		int origemleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).left;
@@ -473,53 +503,38 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -- " + destino);
-        System.out.println("undirected - edge - origem e destino inválidos");
     
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2Element",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // V2 ::= 
+          case 22: // F ::= print adjacency 
             {
               Object RESULT =null;
-
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("V2",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+		 deveImprimir = true; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // F ::= print adjacency 
-            {
-              Object RESULT =null;
-		 
-        deveImprimir = true;
-    
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // F ::= error 
+          case 23: // F ::= error 
             {
               Object RESULT =null;
 		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 
-        defineError(nleft, nright, "Sintaxe inválida!");
-        System.out.println("erro aqui no final");
-    
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+		 defineError(nleft+1, nright, "Sintaxe inválida!"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // F ::= 
+          case 24: // F ::= 
             {
               Object RESULT =null;
 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 

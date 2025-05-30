@@ -1,2 +1,4 @@
-Erro na linha 8 e coluna 5: Erro desconhecido
-Erro na linha 7 e coluna 20: Sintaxe inválida!
+Erro na linha 5 e coluna 10: Tentativa de criar aresta com vértice inexistente: Burro_ -> cao10_
+Erro na linha 6 e coluna 12: Vertice duplicado: Burro_
+Erro na linha 7 e coluna 12: Tentativa de criar vertice com ID errado: 15droptable
+Erro na linha 12 e coluna 10: Aresta duplicada: cao10_ -> Ave

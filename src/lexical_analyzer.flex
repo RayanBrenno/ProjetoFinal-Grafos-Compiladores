@@ -64,5 +64,8 @@ idErrado = {digito}({letra}|{digito})*
 {id}            { return createSymbol(Sym.ID, yytext()); }
 {espaco}        { /* Ignora espaços, quebras de linha e tabulações */ }
 {idErrado}      { return createSymbol(Sym.IDerrado, yytext()); }
-.               { defineError(yyline , yycolumn , "Comando desconhecido: " + yytext()); }
+.               { 
+                    defineError(yyline , yycolumn , "Sintaxe inválida, comando desconhecido: " + yytext()); 
+                    return createSymbol(Sym.EOF);       
+                }
 <<EOF>>         { return createSymbol(Sym.EOF); }
