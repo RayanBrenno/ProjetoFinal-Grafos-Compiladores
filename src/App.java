@@ -7,7 +7,9 @@ import except.ListError;
 import java_cup.runtime.Symbol; 
  
 public class App { 
+
     public static void main(String[] args) throws Exception { 
+        // texte do rayanzin game plays
         String rootPath = Paths.get("").toAbsolutePath().toString(); 
         String inputFilePath = rootPath + "\\src\\input.txt"; 
         ListError listError = new ListError(); 
