@@ -31,7 +31,7 @@ public class ListError {
     public void logErrors() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/erros.log"))) {
             for (Error e : this.errors) {
-                writer.write(e.print()); // usa a formatação personalizada do erro
+                writer.write(e.print());
                 writer.newLine();
             }
         } catch (IOException ex) {

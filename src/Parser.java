@@ -225,7 +225,7 @@ class CUP$Parser$actions {
 		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 defineError(nleft, nright, "Sintaxe inválida!"); 
+		 defineError(nleft, nright, "Sintaxe inválida!"); done_parsing(); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -255,7 +255,7 @@ class CUP$Parser$actions {
 		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 defineError(nleft+1, nright, "Sintaxe inválida!"); 
+		 defineError(nleft+1, nright, "Sintaxe inválida!"); done_parsing(); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("T",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -308,7 +308,14 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         if (!Digrafo.existeVertice(origem, digrafo) || !Digrafo.existeVertice(destino, digrafo)) {
-            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
+            String msg = "Tentativa de criar aresta com vértice inexistente, vertice ";
+            if (!Digrafo.existeVertice(origem, digrafo)) {
+                msg += "origem: " + origem;
+            }
+            if (!Digrafo.existeVertice(destino, digrafo)) {
+                msg += "destino: " + destino;
+            }
+            defineError(origemleft, origemright, msg);
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
         } else {
@@ -432,7 +439,14 @@ class CUP$Parser$actions {
 		String destino = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		 
         if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
-            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
+            String msg = "Tentativa de criar aresta com vértice inexistente, vertice ";
+            if (!Grafo.existeVertice(origem, grafo)) {
+                msg += "origem: " + origem;
+            }
+            if (!Grafo.existeVertice(destino, grafo)) {
+                msg += "destino: " + destino;
+            }
+            defineError(origemleft, origemright, msg);
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
         } else {
@@ -524,7 +538,7 @@ class CUP$Parser$actions {
 		int nleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int nright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Object n = (Object)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 defineError(nleft+1, nright, "Sintaxe inválida!"); 
+		 defineError(nleft, nright, "Sintaxe inválida!"); done_parsing(); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("F",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;

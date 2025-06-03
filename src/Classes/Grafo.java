@@ -33,7 +33,7 @@ public class Grafo {
 
             int colWidth = vertices.stream().mapToInt(String::length).max().orElse(1) + 2;
 
-            writer.write("Matriz de Adjacência (Grafo Não Direcionado)\n\n");
+            writer.write("Matriz de Adjacência (Grafo)\n\n");
 
             writer.write(String.format("%" + colWidth + "s", ""));
             for (String v : vertices) {

@@ -1,7 +1,6 @@
-Matriz de Adjacência (Grafo Não Direcionado)
+Matriz de Adjacência (Grafo)
 
-                   Ave     Burro_     cao10_  droptable
-        Ave          0          1          1          0
-     Burro_          1          0          1          0
-     cao10_          1          1          0          0
-  droptable          0          0          0          0
+             Ave  Burro_  cao10_
+     Ave       0       1       1
+  Burro_       1       0       0
+  cao10_       1       0       0

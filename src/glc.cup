@@ -38,12 +38,12 @@ terminal String ID, IDerrado, adjacency;
 non terminal S, T, V1List, V1Element, V2List, V2Element, F;
 start with S;
 
-S ::= GRAPH colon T
-    | error:n {: defineError(nleft, nright, "Sintaxe inválida!"); :};
+S ::= GRAPH colon T 
+    | error:n {: defineError(nleft, nright, "Sintaxe inválida!"); done_parsing(); :};
 
 T ::= directed V1List F {: type = "digrafo"; :}
     | undirected V2List F {: type = "grafo"; :}
-    | error:n {: defineError(nleft+1, nright, "Sintaxe inválida!"); :};
+    | error:n {: defineError(nleft+1, nright, "Sintaxe inválida!"); done_parsing(); :};
 
 V1List ::= V1List V1Element
     | V1Element;
@@ -59,26 +59,33 @@ V1Element ::= vertex ID:id
     | edge ID:origem arrow ID:destino
     {: 
         if (!Digrafo.existeVertice(origem, digrafo) || !Digrafo.existeVertice(destino, digrafo)) {
-            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -> " + destino);
+            String msg = "Tentativa de criar aresta com vértice inexistente, vertice ";
+            if (!Digrafo.existeVertice(origem, digrafo)) {
+                msg += "origem: " + origem;
+            }
+            if (!Digrafo.existeVertice(destino, digrafo)) {
+                msg += "destino: " + destino;
+            }
+            defineError(origemleft, origemright, msg);
         } else if (Digrafo.existeAresta(origem, destino, digrafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -> " + destino);
         } else {
             Digrafo.adicionarAresta(origem, destino, digrafo);
         }
     :}
-    | vertex IDerrado:id 
+    | vertex IDerrado:id // Erro: Criação do vértice inválido
     {: 
         defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
     :}
-    | edge IDerrado:origem arrow ID:destino
+    | edge IDerrado:origem arrow ID:destino // Erro: origem invalido
     {: 
         defineError(origemleft, origemright, "ID inválido na origem da aresta: " + origem);
     :}
-    | edge ID:origem arrow IDerrado:destino
+    | edge ID:origem arrow IDerrado:destino // Erro: destino invalido
     {: 
         defineError(destinoleft, destinoright, "ID inválido no destino da aresta: " + destino);
     :}
-    | edge IDerrado:origem arrow IDerrado:destino
+    | edge IDerrado:origem arrow IDerrado:destino // Erro: ambos invalidos
     {: 
         defineError(origemleft, origemright, "IDs inválidos na aresta: " + origem + " -> " + destino);
     :};
@@ -97,14 +104,21 @@ V2Element ::= vertex ID:id // Criação do vértice válido
     | edge ID:origem line ID:destino // Criação da aresta válida
     {: 
         if (!Grafo.existeVertice(origem, grafo) || !Grafo.existeVertice(destino, grafo)) {
-            defineError(origemleft, origemright, "Tentativa de criar aresta com vértice inexistente: " + origem + " -- " + destino);
+            String msg = "Tentativa de criar aresta com vértice inexistente, vertice ";
+            if (!Grafo.existeVertice(origem, grafo)) {
+                msg += "origem: " + origem;
+            }
+            if (!Grafo.existeVertice(destino, grafo)) {
+                msg += "destino: " + destino;
+            }
+            defineError(origemleft, origemright, msg);
         } else if (Grafo.existeAresta(origem, destino, grafo)) {
             defineError(origemleft, origemright, "Aresta duplicada: " + origem + " -- " + destino);
         } else {
             Grafo.adicionarAresta(origem, destino, grafo);
         }
     :}
-    | vertex IDerrado:id // Criação do vértice inválido
+    | vertex IDerrado:id // Erro: Criação do vértice inválido
     {: 
         defineError(idleft, idright, "Tentativa de criar vertice com ID errado: " + id);     
     :}
@@ -122,5 +136,5 @@ V2Element ::= vertex ID:id // Criação do vértice válido
     :};
 
 F ::= print adjacency{: deveImprimir = true; :}
-    | error:n {: defineError(nleft+1, nright, "Sintaxe inválida!"); :}
+    | error:n {: defineError(nleft, nright, "Sintaxe inválida!"); done_parsing(); :}
     | ;
