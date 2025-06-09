@@ -1,0 +1,6 @@
+Matriz de Adjacência (Grafo)
+
+             Ave  Burro_  cao10_
+     Ave       0       1       1
+  Burro_       1       0       0
+  cao10_       1       0       0

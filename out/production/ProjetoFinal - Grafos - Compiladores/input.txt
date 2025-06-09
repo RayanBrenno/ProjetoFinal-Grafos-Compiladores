@@ -1,0 +1,8 @@
+GRAPH:
+    undirected
+    vertex Ave
+    vertex Burro_
+    vertex cao10_
+    edge Ave -- Burro_
+    edge cao10_ -- Ave
+    pint adjacency
