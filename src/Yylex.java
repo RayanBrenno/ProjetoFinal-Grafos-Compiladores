@@ -25,7 +25,7 @@ class Yylex implements java_cup.runtime.Scanner {
    * l is of the form l = 2*k, k a non negative integer
    */
   private static final int ZZ_LEXSTATE[] = {
-     0, 0
+          0, 0
   };
 
   /**
@@ -34,7 +34,7 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
-    "\1\0\37\u0100\1\u0200\267\u0100\10\u0300\u1020\u0100";
+          "\1\0\37\u0100\1\u0200\267\u0100\10\u0300\u1020\u0100";
 
   private static int [] zzUnpackcmap_top() {
     int [] result = new int[4352];
@@ -62,13 +62,13 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\2\1\2\2\1\1\22\0\1\1\14\0\1\3"+
-    "\2\0\12\4\1\5\3\0\1\6\2\0\1\7\5\10"+
-    "\1\11\1\12\7\10\1\13\1\10\1\14\10\10\4\0"+
-    "\1\10\1\0\1\15\1\10\1\16\1\17\1\20\1\10"+
-    "\1\21\1\10\1\22\1\23\3\10\1\24\1\10\1\25"+
-    "\1\10\1\26\1\10\1\27\1\30\1\31\1\10\1\32"+
-    "\1\33\1\10\12\0\1\2\u01a2\0\2\2\326\0\u0100\2";
+          "\11\0\2\1\2\2\1\1\22\0\1\1\14\0\1\3"+
+                  "\2\0\12\4\1\5\3\0\1\6\2\0\1\7\5\10"+
+                  "\1\11\1\12\7\10\1\13\1\10\1\14\10\10\4\0"+
+                  "\1\10\1\0\1\15\1\10\1\16\1\17\1\20\1\10"+
+                  "\1\21\1\10\1\22\1\23\3\10\1\24\1\10\1\25"+
+                  "\1\10\1\26\1\10\1\27\1\30\1\31\1\10\1\32"+
+                  "\1\33\1\10\12\0\1\2\u01a2\0\2\2\326\0\u0100\2";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -95,9 +95,9 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\1\1\3\1\4\10\5\1\6"+
-    "\1\7\21\5\1\10\3\5\1\11\2\5\1\12\5\5"+
-    "\1\13\4\5\1\14\1\5\1\15\1\5\1\16";
+          "\1\0\1\1\1\2\1\1\1\3\1\4\10\5\1\6"+
+                  "\1\7\21\5\1\10\3\5\1\11\2\5\1\12\5\5"+
+                  "\1\13\4\5\1\14\1\5\1\15\1\5\1\16";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[56];
@@ -125,13 +125,13 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\34\0\70\0\124\0\160\0\34\0\214\0\250"+
-    "\0\304\0\340\0\374\0\u0118\0\u0134\0\u0150\0\34\0\34"+
-    "\0\u016c\0\u0188\0\u01a4\0\u01c0\0\u01dc\0\u01f8\0\u0214\0\u0230"+
-    "\0\u024c\0\u0268\0\u0284\0\u02a0\0\u02bc\0\u02d8\0\u02f4\0\u0310"+
-    "\0\u032c\0\214\0\u0348\0\u0364\0\u0380\0\214\0\u039c\0\u03b8"+
-    "\0\214\0\u03d4\0\u03f0\0\u040c\0\u0428\0\u0444\0\214\0\u0460"+
-    "\0\u047c\0\u0498\0\u04b4\0\214\0\u04d0\0\214\0\u04ec\0\214";
+          "\0\0\0\34\0\70\0\124\0\160\0\34\0\214\0\250"+
+                  "\0\304\0\340\0\374\0\u0118\0\u0134\0\u0150\0\34\0\34"+
+                  "\0\u016c\0\u0188\0\u01a4\0\u01c0\0\u01dc\0\u01f8\0\u0214\0\u0230"+
+                  "\0\u024c\0\u0268\0\u0284\0\u02a0\0\u02bc\0\u02d8\0\u02f4\0\u0310"+
+                  "\0\u032c\0\214\0\u0348\0\u0364\0\u0380\0\214\0\u039c\0\u03b8"+
+                  "\0\214\0\u03d4\0\u03f0\0\u040c\0\u0428\0\u0444\0\214\0\u0460"+
+                  "\0\u047c\0\u0498\0\u04b4\0\214\0\u04d0\0\214\0\u04ec\0\214";
 
   private static int [] zzUnpackRowMap() {
     int [] result = new int[56];
@@ -157,40 +157,40 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_TRANS = zzUnpacktrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\0\1\4\1\5\1\6\1\2\2\7"+
-    "\1\10\3\7\1\11\1\7\1\12\1\13\4\7\1\14"+
-    "\2\7\1\15\1\16\2\7\35\0\1\3\35\0\1\17"+
-    "\2\0\1\20\31\0\1\5\2\0\25\5\4\0\1\7"+
-    "\2\0\25\7\4\0\1\7\2\0\5\7\1\21\17\7"+
-    "\4\0\1\7\2\0\10\7\1\22\14\7\4\0\1\7"+
-    "\2\0\13\7\1\23\11\7\4\0\1\7\2\0\10\7"+
-    "\1\24\14\7\4\0\1\7\2\0\17\7\1\25\5\7"+
-    "\4\0\1\7\2\0\15\7\1\26\7\7\4\0\1\7"+
-    "\2\0\11\7\1\27\13\7\4\0\1\7\2\0\1\30"+
-    "\24\7\4\0\1\7\2\0\14\7\1\31\10\7\4\0"+
-    "\1\7\2\0\17\7\1\32\5\7\4\0\1\7\2\0"+
-    "\12\7\1\33\12\7\4\0\1\7\2\0\13\7\1\34"+
-    "\11\7\4\0\1\7\2\0\10\7\1\35\14\7\4\0"+
-    "\1\7\2\0\17\7\1\36\5\7\4\0\1\7\2\0"+
-    "\4\7\1\37\20\7\4\0\1\7\2\0\6\7\1\40"+
-    "\16\7\4\0\1\7\2\0\11\7\1\41\13\7\4\0"+
-    "\1\7\2\0\11\7\1\42\13\7\4\0\1\7\2\0"+
-    "\15\7\1\43\7\7\4\0\1\7\2\0\13\7\1\44"+
-    "\11\7\4\0\1\7\2\0\20\7\1\45\4\7\4\0"+
-    "\1\7\2\0\3\7\1\46\21\7\4\0\1\7\2\0"+
-    "\7\7\1\47\15\7\4\0\1\7\2\0\7\7\1\50"+
-    "\15\7\4\0\1\7\2\0\20\7\1\51\4\7\4\0"+
-    "\1\7\2\0\17\7\1\52\5\7\4\0\1\7\2\0"+
-    "\11\7\1\53\13\7\4\0\1\7\2\0\11\7\1\54"+
-    "\13\7\4\0\1\7\2\0\20\7\1\55\4\7\4\0"+
-    "\1\7\2\0\11\7\1\56\13\7\4\0\1\7\2\0"+
-    "\23\7\1\57\1\7\4\0\1\7\2\0\15\7\1\60"+
-    "\7\7\4\0\1\7\2\0\11\7\1\61\13\7\4\0"+
-    "\1\7\2\0\7\7\1\62\15\7\4\0\1\7\2\0"+
-    "\7\7\1\63\15\7\4\0\1\7\2\0\10\7\1\64"+
-    "\14\7\4\0\1\7\2\0\20\7\1\65\4\7\4\0"+
-    "\1\7\2\0\24\7\1\66\4\0\1\7\2\0\11\7"+
-    "\1\67\13\7\4\0\1\7\2\0\10\7\1\70\14\7";
+          "\1\2\1\3\1\0\1\4\1\5\1\6\1\2\2\7"+
+                  "\1\10\3\7\1\11\1\7\1\12\1\13\4\7\1\14"+
+                  "\2\7\1\15\1\16\2\7\35\0\1\3\35\0\1\17"+
+                  "\2\0\1\20\31\0\1\5\2\0\25\5\4\0\1\7"+
+                  "\2\0\25\7\4\0\1\7\2\0\5\7\1\21\17\7"+
+                  "\4\0\1\7\2\0\10\7\1\22\14\7\4\0\1\7"+
+                  "\2\0\13\7\1\23\11\7\4\0\1\7\2\0\10\7"+
+                  "\1\24\14\7\4\0\1\7\2\0\17\7\1\25\5\7"+
+                  "\4\0\1\7\2\0\15\7\1\26\7\7\4\0\1\7"+
+                  "\2\0\11\7\1\27\13\7\4\0\1\7\2\0\1\30"+
+                  "\24\7\4\0\1\7\2\0\14\7\1\31\10\7\4\0"+
+                  "\1\7\2\0\17\7\1\32\5\7\4\0\1\7\2\0"+
+                  "\12\7\1\33\12\7\4\0\1\7\2\0\13\7\1\34"+
+                  "\11\7\4\0\1\7\2\0\10\7\1\35\14\7\4\0"+
+                  "\1\7\2\0\17\7\1\36\5\7\4\0\1\7\2\0"+
+                  "\4\7\1\37\20\7\4\0\1\7\2\0\6\7\1\40"+
+                  "\16\7\4\0\1\7\2\0\11\7\1\41\13\7\4\0"+
+                  "\1\7\2\0\11\7\1\42\13\7\4\0\1\7\2\0"+
+                  "\15\7\1\43\7\7\4\0\1\7\2\0\13\7\1\44"+
+                  "\11\7\4\0\1\7\2\0\20\7\1\45\4\7\4\0"+
+                  "\1\7\2\0\3\7\1\46\21\7\4\0\1\7\2\0"+
+                  "\7\7\1\47\15\7\4\0\1\7\2\0\7\7\1\50"+
+                  "\15\7\4\0\1\7\2\0\20\7\1\51\4\7\4\0"+
+                  "\1\7\2\0\17\7\1\52\5\7\4\0\1\7\2\0"+
+                  "\11\7\1\53\13\7\4\0\1\7\2\0\11\7\1\54"+
+                  "\13\7\4\0\1\7\2\0\20\7\1\55\4\7\4\0"+
+                  "\1\7\2\0\11\7\1\56\13\7\4\0\1\7\2\0"+
+                  "\23\7\1\57\1\7\4\0\1\7\2\0\15\7\1\60"+
+                  "\7\7\4\0\1\7\2\0\11\7\1\61\13\7\4\0"+
+                  "\1\7\2\0\7\7\1\62\15\7\4\0\1\7\2\0"+
+                  "\7\7\1\63\15\7\4\0\1\7\2\0\10\7\1\64"+
+                  "\14\7\4\0\1\7\2\0\20\7\1\65\4\7\4\0"+
+                  "\1\7\2\0\24\7\1\66\4\0\1\7\2\0\11\7"+
+                  "\1\67\13\7\4\0\1\7\2\0\10\7\1\70\14\7";
 
   private static int [] zzUnpacktrans() {
     int [] result = new int[1288];
@@ -225,9 +225,9 @@ class Yylex implements java_cup.runtime.Scanner {
    * {@link #ZZ_PUSHBACK_2BIG} respectively.
    */
   private static final String ZZ_ERROR_MSG[] = {
-    "Unknown internal scanner error",
-    "Error: could not match input",
-    "Error: pushback value was too large"
+          "Unknown internal scanner error",
+          "Error: could not match input",
+          "Error: pushback value was too large"
   };
 
   /**
@@ -236,7 +236,7 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\3\1\1\11\10\1\2\11\50\1";
+          "\1\0\1\11\3\1\1\11\10\1\2\11\50\1";
 
   private static int [] zzUnpackAttribute() {
     int [] result = new int[56];
@@ -317,36 +317,36 @@ class Yylex implements java_cup.runtime.Scanner {
 
   /* user code: */
 
-    private ListError listError; 
- 
-    public Yylex(java.io.FileReader in, ListError listError) { 
-        this(in); 
-        this.listError = listError; 
-    } 
- 
-    public ListError getListError() { 
-        return listError; 
-    } 
- 
-    public void defineError(int line, int column, String text) { 
-        this.listError.defineError(line, column, text); 
-    } 
- 
-    public void defineError(int linha, int coluna) { 
-        this.listError.defineError(linha, coluna); 
-    }
+  private ListError listError;
 
-    public void defineError(String texto) { 
-        this.listError.defineError(texto); 
-    } 
- 
-    public Symbol createSymbol(int token, Object value) { 
-        return new Symbol(token, yyline, yycolumn, value); 
-    } 
- 
-    public Symbol createSymbol(int token) { 
-        return this.createSymbol(token, null); 
-    } 
+  public Yylex(java.io.FileReader in, ListError listError) {
+    this(in);
+    this.listError = listError;
+  }
+
+  public ListError getListError() {
+    return listError;
+  }
+
+  public void defineError(int line, int column, String text) {
+    this.listError.defineError(line, column, text);
+  }
+
+  public void defineError(int linha, int coluna) {
+    this.listError.defineError(linha, coluna);
+  }
+
+  public void defineError(String texto) {
+    this.listError.defineError(texto);
+  }
+
+  public Symbol createSymbol(int token, Object value) {
+    return new Symbol(token, yyline, yycolumn, value);
+  }
+
+  public Symbol createSymbol(int token) {
+    return this.createSymbol(token, null);
+  }
 
 
 
@@ -391,8 +391,8 @@ class Yylex implements java_cup.runtime.Scanner {
       zzEndRead += zzFinalHighSurrogate;
       zzFinalHighSurrogate = 0;
       System.arraycopy(zzBuffer, zzStartRead,
-                       zzBuffer, 0,
-                       zzEndRead - zzStartRead);
+              zzBuffer, 0,
+              zzEndRead - zzStartRead);
 
       /* translate stored positions */
       zzEndRead -= zzStartRead;
@@ -422,7 +422,7 @@ class Yylex implements java_cup.runtime.Scanner {
       }
       else {
         throw new java.io.IOException(
-            "Reader returned 0 characters. See JFlex examples/zero-reader for a workaround.");
+                "Reader returned 0 characters. See JFlex examples/zero-reader for a workaround.");
       }
     }
     if (numRead > 0) {
@@ -491,16 +491,16 @@ class Yylex implements java_cup.runtime.Scanner {
    * Resets the input position.
    */
   private final void yyResetPosition() {
-      zzAtBOL  = true;
-      zzAtEOF  = false;
-      zzCurrentPos = 0;
-      zzMarkedPos = 0;
-      zzStartRead = 0;
-      zzEndRead = 0;
-      zzFinalHighSurrogate = 0;
-      yyline = 0;
-      yycolumn = 0;
-      yychar = 0L;
+    zzAtBOL  = true;
+    zzAtEOF  = false;
+    zzCurrentPos = 0;
+    zzMarkedPos = 0;
+    zzStartRead = 0;
+    zzEndRead = 0;
+    zzFinalHighSurrogate = 0;
+    yyline = 0;
+    yycolumn = 0;
+    yychar = 0L;
   }
 
 
@@ -617,8 +617,8 @@ class Yylex implements java_cup.runtime.Scanner {
   private void zzDoEOF() throws java.io.IOException {
     if (!zzEOFDone) {
       zzEOFDone = true;
-    
-  yyclose();    }
+
+      yyclose();    }
   }
 
 
@@ -658,31 +658,31 @@ class Yylex implements java_cup.runtime.Scanner {
         zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);
         zzCharCount = Character.charCount(zzCh);
         switch (zzCh) {
-        case '\u000B':  // fall through
-        case '\u000C':  // fall through
-        case '\u0085':  // fall through
-        case '\u2028':  // fall through
-        case '\u2029':
-          yyline++;
-          yycolumn = 0;
-          zzR = false;
-          break;
-        case '\r':
-          yyline++;
-          yycolumn = 0;
-          zzR = true;
-          break;
-        case '\n':
-          if (zzR)
-            zzR = false;
-          else {
+          case '\u000B':  // fall through
+          case '\u000C':  // fall through
+          case '\u0085':  // fall through
+          case '\u2028':  // fall through
+          case '\u2029':
             yyline++;
             yycolumn = 0;
-          }
-          break;
-        default:
-          zzR = false;
-          yycolumn += zzCharCount;
+            zzR = false;
+            break;
+          case '\r':
+            yyline++;
+            yycolumn = 0;
+            zzR = true;
+            break;
+          case '\n':
+            if (zzR)
+              zzR = false;
+            else {
+              yyline++;
+              yycolumn = 0;
+            }
+            break;
+          default:
+            zzR = false;
+            yycolumn += zzCharCount;
         }
       }
 
@@ -717,7 +717,6 @@ class Yylex implements java_cup.runtime.Scanner {
       if ( (zzAttributes & 1) == 1 ) {
         zzAction = zzState;
       }
-
 
       zzForAction: {
         while (true) {
@@ -768,82 +767,82 @@ class Yylex implements java_cup.runtime.Scanner {
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-            zzDoEOF();
-              {
-                return createSymbol(Sym.EOF);
-              }
+        zzDoEOF();
+        {
+          return createSymbol(Sym.EOF);
+        }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { defineError(yyline , yycolumn , "Sintaxe inválida, comando desconhecido: " + yytext()); 
-                    return createSymbol(Sym.EOF);
-            }
+          { defineError(yyline , yycolumn , "Sintaxe inválida, comando desconhecido: " + yytext());
+            return createSymbol(Sym.EOF);
+          }
           // fall through
           case 15: break;
           case 2:
-            { /* Ignora espaços, quebras de linha e tabulações */
-            }
+          { /* Ignora espaços, quebras de linha e tabulações */
+          }
           // fall through
           case 16: break;
           case 3:
-            { return createSymbol(Sym.IDerrado, yytext());
-            }
+          { return createSymbol(Sym.IDerrado, yytext());
+          }
           // fall through
           case 17: break;
           case 4:
-            { return createSymbol(Sym.colon);
-            }
+          { return createSymbol(Sym.colon);
+          }
           // fall through
           case 18: break;
           case 5:
-            { return createSymbol(Sym.ID, yytext());
-            }
+          { return createSymbol(Sym.ID, yytext());
+          }
           // fall through
           case 19: break;
           case 6:
-            { return createSymbol(Sym.line);
-            }
+          { return createSymbol(Sym.line);
+          }
           // fall through
           case 20: break;
           case 7:
-            { return createSymbol(Sym.arrow);
-            }
+          { return createSymbol(Sym.arrow);
+          }
           // fall through
           case 21: break;
           case 8:
-            { return createSymbol(Sym.edge);
-            }
+          { return createSymbol(Sym.edge);
+          }
           // fall through
           case 22: break;
           case 9:
-            { return createSymbol(Sym.GRAPH);
-            }
+          { return createSymbol(Sym.GRAPH);
+          }
           // fall through
           case 23: break;
           case 10:
-            { return createSymbol(Sym.print);
-            }
+          { return createSymbol(Sym.print);
+          }
           // fall through
           case 24: break;
           case 11:
-            { return createSymbol(Sym.vertex);
-            }
+          { return createSymbol(Sym.vertex);
+          }
           // fall through
           case 25: break;
           case 12:
-            { return createSymbol(Sym.directed);
-            }
+          { return createSymbol(Sym.directed);
+          }
           // fall through
           case 26: break;
           case 13:
-            { return createSymbol(Sym.adjacency);
-            }
+          { return createSymbol(Sym.adjacency);
+          }
           // fall through
           case 27: break;
           case 14:
-            { return createSymbol(Sym.undirected);
-            }
+          { return createSymbol(Sym.undirected);
+          }
           // fall through
           case 28: break;
           default:

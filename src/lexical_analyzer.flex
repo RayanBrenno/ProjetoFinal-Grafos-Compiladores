@@ -8,6 +8,12 @@ import except.ListError;
 %line
 %column
 
+%{
+  int yyline = 0;
+  int yycolumn = 0;
+%}
+
+
 %{ 
 
     private ListError listError; 
@@ -33,11 +39,12 @@ import except.ListError;
         this.listError.defineError(texto); 
     } 
  
-    public Symbol createSymbol(int token, Object value) { 
+    public Symbol createSymbol(int token, Object value) {
+        System.out.println("Token: " + token + " | Lexema: " + value + " | Linha: " + (yyline + 1) + " | Coluna: " + (yycolumn + 1));
         return new Symbol(token, yyline, yycolumn, value); 
     } 
  
-    public Symbol createSymbol(int token) { 
+    public Symbol createSymbol(int token) {
         return this.createSymbol(token, null); 
     } 
 
@@ -62,10 +69,19 @@ idErrado = {digito}({letra}|{digito})*
 "->"            { return createSymbol(Sym.arrow); }
 "--"            { return createSymbol(Sym.line); }
 {id}            { return createSymbol(Sym.ID, yytext()); }
-{espaco}        { /* Ignora espaços, quebras de linha e tabulações */ }
+{espaco}        { /* ignora espaços */ }
 {idErrado}      { return createSymbol(Sym.IDerrado, yytext()); }
 .               { 
                     defineError(yyline , yycolumn , "Sintaxe inválida, comando desconhecido: " + yytext()); 
                     return createSymbol(Sym.EOF);       
                 }
+\n              { yyline++; yycolumn = 0; }
+\r\n?           { yyline++; yycolumn = 0; } // caso Windows
+.               { yycolumn++; }
+
 <<EOF>>         { return createSymbol(Sym.EOF); }
+
+// Regras para rastrear linha e coluna
+\n              { yyline++; yycolumn = 0; return (Symbol) null; }
+\r\n?           { yyline++; yycolumn = 0; return (Symbol) null; }
+.               { yycolumn++; return (Symbol) null; }
