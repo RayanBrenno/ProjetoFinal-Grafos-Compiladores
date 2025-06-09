@@ -6,22 +6,35 @@ import Classes.Digrafo;
 import Classes.Grafo;
 
 parser code {:
-  public void syntax_error(Symbol s){
+
+    public Map<String, Set<String>> grafo = new HashMap<>();
+    public Map<String, Set<String>> digrafo = new HashMap<>();
+    String type;
+    public boolean deveImprimir = false;
+
+    public void syntax_error(Symbol s){
       if (s.value != null)
           defineError(s.left, s.right, s.value.toString());
       else
           defineError(s.left, s.right);
-  }
+    }
 
-  public void defineError(int line, int column, String text) {
-      System.err.printf("Erro na linha %d e coluna %d: símbolo '%s' inválido!
-", line, column, text);
-  }
+    public void defineError(int line, int column, String text) {
+        Yylex scanner = (Yylex) this.getScanner();
+        scanner.defineError(line, column, text);
+    }
 
-  public void defineError(int line, int column) {
-      System.err.printf("Erro na linha %d e coluna %d: Sintaxe inválida!
-", line, column);
-  }
+    public void defineError(int line, int column) {
+        Yylex scanner = (Yylex) this.getScanner();
+        scanner.defineError(line, column);
+    }
+
+    public void defineError(String text) {
+        Yylex scanner = (Yylex) this.getScanner();
+        scanner.defineError(text);
+    }
+
+
 :};
 
 
